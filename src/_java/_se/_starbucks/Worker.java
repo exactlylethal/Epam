@@ -3,7 +3,7 @@ package _java._se._starbucks;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Worker implements WorkerRules {
+public class Worker implements WorkerRule {
     private Scanner scanner = new Scanner(System.in);
     private Client name = new Client();
     private CoffeeType chosenType;
