@@ -1,4 +1,4 @@
-package _java._se._starbucks;
+package training.starbucks;
 
 import java.util.Arrays;
 import java.util.Scanner;
