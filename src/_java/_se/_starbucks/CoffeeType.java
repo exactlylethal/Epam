@@ -6,30 +6,29 @@ public enum CoffeeType {
     MOCCA("Mocca", 800),
     AMERICANO("Americano", 500);
 
-    private int cost;
-    private String name;
 
-    CoffeeType(String name, int cost) {
-        this.name = name;
-        this.cost = cost;
+    private int coffeeCost;
+    private String coffeeName;
+
+    CoffeeType(String coffeeName, int coffeeCost) {
+        this.coffeeName = coffeeName;
+        this.coffeeCost = coffeeCost;
     }
 
-    public int getCost() {
-        return cost;
+    public int getCoffeeCost() {
+        return coffeeCost;
     }
 
-    public String getName() {
-        return name;
+    public String getCoffeeName() {
+        return coffeeName;
     }
 
     public static CoffeeType findByName(String name) {
         for (CoffeeType type : CoffeeType.values()) {
-            if (type.getName().equalsIgnoreCase(name)) {
+            if (type.getCoffeeName().equalsIgnoreCase(name)) {
                 return type;
             }
         }
         return null;
     }
 }
-
-
