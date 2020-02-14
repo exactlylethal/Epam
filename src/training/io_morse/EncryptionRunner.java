@@ -1,4 +1,4 @@
-package training.iomorse;
+package training.io_morse;
 
 import java.io.IOException;
 

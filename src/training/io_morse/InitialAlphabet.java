@@ -1,4 +1,4 @@
-package training.iomorse;
+package training.io_morse;
 
 public class InitialAlphabet {
     private static final char[] ENGLISH_ALPHABET = {
