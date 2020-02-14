@@ -4,10 +4,9 @@ import java.io.*;
 import java.util.Scanner;
 
 public class ConvertFromEnglish  {
-
     private File toMorseFile = new File("src/training/iomorse/resource/FromEnglishText");
 
-    static void writeToFile(String s) throws IOException {
+   public static void writeToFile(String s) throws IOException {
         Scanner scan = new Scanner(System.in);
         String yourEnglishSequence;
         yourEnglishSequence = scan.nextLine();
@@ -30,14 +29,11 @@ public class ConvertFromEnglish  {
             if(scanner.hasNextLine()){
                 engTextToChange += scanner.nextLine();
             }
-            else {
-                System.out.println("You ");
-            }
 
         for (int i = 0; i < engTextToChange.length(); i++) {
             for (short j = 0; j < 27; j++) {
-                if (engTextToChange.charAt(i) == Alphabet.getEnglishAlphabet()[j]) {
-                    newText.append(Alphabet.getMorseAlphabet()[j]);
+                if (engTextToChange.charAt(i) == InitialAlphabet.getEnglishAlphabet()[j]) {
+                    newText.append(InitialAlphabet.getMorseAlphabet()[j]);
                 }
             }
         }
