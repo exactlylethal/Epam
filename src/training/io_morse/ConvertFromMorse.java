@@ -23,13 +23,14 @@ public class ConvertFromMorse {
             morseTextToChange += scanner.nextLine();
         }
 
-        for(String split : morseTextToChange.split("\\s")){
-            for(short j = 0; j < 27; j++){
-                if(split.equals(InitialAlphabet.getMorseAlphabet()[j])){
-                    newText.append(InitialAlphabet.getEnglishAlphabet()[j]);
+            for(String result : morseTextToChange.split("\\s")){
+                System.out.println(result);
+                for(short j = 0; j < 27; j++){
+                    if(result.equals(InitialAlphabet.getMorseAlphabet()[j])){
+                        newText.append(InitialAlphabet.getEnglishAlphabet()[j]);
+                    }
                 }
             }
-    }
 
         BufferedWriter writer = new BufferedWriter(new FileWriter("src/training/io_morse/resource/ToEnglish"));
         writer.write(newText.toString());
