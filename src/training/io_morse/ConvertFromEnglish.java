@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class ConvertFromEnglish  {
-    private File toMorseFile = new File("src/training/iomorse/resource/FromEnglishText");
+    private File toMorseFile = new File("src/training/io_morse/resource/FromEnglishText");
 
    public static void writeToFile(String s) throws IOException {
         Scanner scan = new Scanner(System.in);
@@ -18,7 +18,7 @@ public class ConvertFromEnglish  {
 
     public void writeToEnglish() throws IOException{
         System.out.println("Write your sequence to encrypt: ");
-        writeToFile("src/training/iomorse/resource/FromEnglishText");
+        writeToFile("src/training/io_morse/resource/FromEnglishText");
     }
 
     public void convertToMorse() throws IOException {
@@ -38,7 +38,7 @@ public class ConvertFromEnglish  {
             }
         }
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/training/iomorse/resource/ToMorse"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/training/io_morse/resource/ToMorse"));
         writer.write(newText.toString());
         writer.flush();
         writer.close();
