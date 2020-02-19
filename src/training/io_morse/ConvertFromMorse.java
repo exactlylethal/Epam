@@ -1,13 +1,10 @@
 package training.io_morse;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class ConvertFromMorse {
-    private File toEnglishFile = new File("src/training/io_morse/resource/FromMorseText");
+    private File fromMorseFile = new File("src/training/io_morse/resource/FromMorseText");
 
     public void writeToMorse() throws IOException {
         System.out.println("Write your sequence to decrypt: ");
@@ -15,7 +12,7 @@ public class ConvertFromMorse {
     }
 
     public void convertFromMorse() throws IOException {
-        Scanner scanner = new Scanner(toEnglishFile);
+        Scanner scanner = new Scanner(fromMorseFile);
         String morseTextToChange = "";
         StringBuilder newText = new StringBuilder();
 
@@ -24,7 +21,6 @@ public class ConvertFromMorse {
         }
 
             for(String result : morseTextToChange.split("\\s")){
-                System.out.println(result);
                 for(short j = 0; j < 27; j++){
                     if(result.equals(InitialAlphabet.getMorseAlphabet()[j])){
                         newText.append(InitialAlphabet.getEnglishAlphabet()[j]);

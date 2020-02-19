@@ -4,14 +4,14 @@ import java.io.*;
 import java.util.Scanner;
 
 public class ConvertFromEnglish  {
-    private File toMorseFile = new File("src/training/io_morse/resource/FromEnglishText");
+    private File fromEnglishFile = new File("src/training/io_morse/resource/FromEnglishText");
 
-   public static void writeToFile(String s) throws IOException {
+   public static void writeToFile(String line) throws IOException {
         Scanner scan = new Scanner(System.in);
-        String yourEnglishSequence;
-        yourEnglishSequence = scan.nextLine();
-        BufferedWriter writer = new BufferedWriter(new FileWriter(s));
-        writer.write(yourEnglishSequence);
+        String yourSequence;
+        yourSequence = scan.nextLine();
+        BufferedWriter writer = new BufferedWriter(new FileWriter(line));
+        writer.write(yourSequence);
         writer.flush();
         writer.close();
     }
@@ -22,17 +22,17 @@ public class ConvertFromEnglish  {
     }
 
     public void convertToMorse() throws IOException {
-        Scanner scanner = new Scanner(toMorseFile);
-        String engTextToChange = "";
+        Scanner scanner = new Scanner(fromEnglishFile);
+        String englishTextToChange = "";
         StringBuilder newText = new StringBuilder();
 
-            if(scanner.hasNextLine()){
-                engTextToChange += scanner.nextLine();
-            }
+        if (scanner.hasNextLine()) {
+            englishTextToChange += scanner.nextLine();
+        }
 
-        for (int i = 0; i < engTextToChange.length(); i++) {
+        for (int i = 0; i < englishTextToChange.length(); i++) {
             for (short j = 0; j < 27; j++) {
-                if (engTextToChange.charAt(i) == InitialAlphabet.getEnglishAlphabet()[j]) {
+                if (englishTextToChange.charAt(i) == InitialAlphabet.getEnglishAlphabet()[j]) {
                     newText.append(InitialAlphabet.getMorseAlphabet()[j]);
                 }
             }
