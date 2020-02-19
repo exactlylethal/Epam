@@ -20,17 +20,21 @@ public class Choice {
         if(yourChoice.equalsIgnoreCase("Encode from file")){
             firstConverter.convertToMorse();
         }
+
         else if(yourChoice.equalsIgnoreCase("Encode from console")){
             firstConverter.writeToEnglish();
             firstConverter.convertToMorse();
         }
+
         else if(yourChoice.equalsIgnoreCase("Decode from file")){
             secondConverter.convertFromMorse();
         }
+
         else if(yourChoice.equalsIgnoreCase("Decode from console")){
             secondConverter.writeToMorse();
             secondConverter.convertFromMorse();
         }
+
         else{
             System.out.println("You made a mistake. Try again");
             convertType();

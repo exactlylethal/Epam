@@ -19,4 +19,3 @@ public class InitialAlphabet {
         return MORSE_ALPHABET;
     }
 }
-
