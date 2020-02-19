@@ -4,8 +4,8 @@ public enum CoffeeType {
     LATTE("Latte", 700),
     CAPPUCINO("Cappucino", 750),
     MOCCA("Mocca", 800),
-    AMERICANO("Americano", 500);
-
+    AMERICANO("Americano", 500),
+    WRONG("wrong", 0);
 
     private int coffeeCost;
     private String coffeeName;
@@ -29,6 +29,6 @@ public enum CoffeeType {
                 return type;
             }
         }
-        return null;
+        return WRONG;
     }
 }
